@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:lojavirtual/tiles/drawer_tiles.dart';
 
 class CustomDrawer extends StatelessWidget {
+
+  final PageController pageController;
+  CustomDrawer(this.pageController);
+
+
   Widget _buildDrawerBack() => Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
@@ -60,10 +65,10 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
               Divider(),
-              DrawerTile(Icons.home,"Início"),
-              DrawerTile(Icons.list,"Promoções"),
-              DrawerTile(Icons.location_on,"Lojas"),
-              DrawerTile(Icons.playlist_add_check,"Meus pedidos"),
+              DrawerTile(Icons.home,"Início",pageController,0),
+              DrawerTile(Icons.list,"Promoções",pageController,1),
+              DrawerTile(Icons.location_on,"Lojas",pageController,2),
+              DrawerTile(Icons.playlist_add_check,"Meus pedidos",pageController,3),
             ],
           )
         ],

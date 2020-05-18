@@ -13,8 +13,13 @@ class HomeScreen extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
         Scaffold(
-          body:HomeTab(), drawer: CustomDrawer()
+          body:HomeTab(), drawer: CustomDrawer(_pagerController)
         ),
+        Container(color: Colors.white,),
+        Container(color: Colors.black,),
+        Container(color: Colors.blue,),
+        Container(color: Colors.orange,),
+        Container(color: Colors.pink,)
       ],
     );
   }
