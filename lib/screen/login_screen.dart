@@ -74,9 +74,7 @@ class LoginScreen extends StatelessWidget {
                   if(_formKey.currentState.validate()){
 
                   }
-
                   model.signIn();
-
                 },
                 child: Text(
                   "Entrar",
