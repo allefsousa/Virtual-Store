@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lojavirtual/screen/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
 
-
   final _formKey = GlobalKey<FormState>();
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +13,11 @@ class LoginScreen extends StatelessWidget {
         centerTitle: true,
         actions: <Widget>[
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => SignUpScreen())
+              );
+            },
             child: Text(
               "Cria conta",
               style: TextStyle(
