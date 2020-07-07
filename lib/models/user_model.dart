@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'dart:developer' as developer;
+
 
 class UserModel extends Model {
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -18,6 +20,7 @@ class UserModel extends Model {
   @override
   void addListener(VoidCallback listener) {
     super.addListener(listener);
+    developer.log('log me', name: 'Inicio');
     _loadCurrentUser();
   }
 
@@ -91,7 +94,7 @@ class UserModel extends Model {
   }
 
   Future<Null> _loadCurrentUser() async {
-   if (FirebaseUser == null){
+   if (firebaseUser == null){
      firebaseUser = await _auth.currentUser();
      if(firebaseUser != null){
        if(userData["name"] == null){
