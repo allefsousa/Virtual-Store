@@ -4,7 +4,7 @@
             "outputFile": "/Users/allef.santos/Desktop/Novos Projetos/Virtual-Store/build/url_launcher/intermediates/incremental/mergeDebugResources/merged.dir/values-cs/values-cs.xml",
             "map": [
                 {
-                    "source": "/Users/allef.santos/.gradle/caches/transforms-2/files-2.1/c1da7862c7abb8e426855a3f78caf221/core-1.0.0/res/values-cs/values-cs.xml",
+                    "source": "/Users/allef.santos/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/values-cs/values-cs.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -19,7 +19,7 @@
             "outputFile": "/Users/allef.santos/Desktop/Novos Projetos/Virtual-Store/build/url_launcher/intermediates/res/merged/debug/values-cs/values-cs.xml",
             "map": [
                 {
-                    "source": "/Users/allef.santos/.gradle/caches/transforms-2/files-2.1/c1da7862c7abb8e426855a3f78caf221/core-1.0.0/res/values-cs/values-cs.xml",
+                    "source": "/Users/allef.santos/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/values-cs/values-cs.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

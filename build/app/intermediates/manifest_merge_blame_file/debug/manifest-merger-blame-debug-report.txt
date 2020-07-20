@@ -38,7 +38,7 @@
 27        android:name="io.flutter.app.FlutterApplication"
 27-->/Users/allef.santos/Desktop/Novos Projetos/Virtual-Store/android/app/src/main/AndroidManifest.xml:9:9-57
 28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-28-->[androidx.core:core:1.0.0] /Users/allef.santos/.gradle/caches/transforms-2/files-2.1/c1da7862c7abb8e426855a3f78caf221/core-1.0.0/AndroidManifest.xml:22:18-86
+28-->[androidx.core:core:1.1.0] /Users/allef.santos/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/AndroidManifest.xml:24:18-86
 29        android:debuggable="true"
 30        android:icon="@mipmap/ic_launcher"
 30-->/Users/allef.santos/Desktop/Novos Projetos/Virtual-Store/android/app/src/main/AndroidManifest.xml:11:9-43
