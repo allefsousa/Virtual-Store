@@ -4,7 +4,6 @@ import 'package:lojavirtual/data/cart_product.dart';
 import 'package:lojavirtual/data/product_data.dart';
 
 class CartTile extends StatelessWidget {
-
   final CartProduct cartProduct;
 
   CartTile(this.cartProduct);
@@ -13,27 +12,45 @@ class CartTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-      child: cartProduct.productData == null ?
-      FutureBuilder<DocumentSnapshot>(builder: (context,snapshot){
-        if(snapshot.hasData){
-          cartProduct.productData = ProductData.fromDocument(snapshot.data);
-          return _buildContent();
-        }else{
-          return Container(
-            height: 70.0,
-            child: CircularProgressIndicator(),
-            alignment: Alignment.center,
-          );
-        }
-      },
-        future: Firestore.instance.collection("products").document(
-            cartProduct.category).collection("items")
-            .document(cartProduct.pid)
-            .get(),
-      ) : _buildContent(),
+      child: cartProduct.productData == null
+          ? FutureBuilder<DocumentSnapshot>(
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  cartProduct.productData =
+                      ProductData.fromDocument(snapshot.data);
+                  return _buildContent();
+                } else {
+                  return Container(
+                    height: 70.0,
+                    child: CircularProgressIndicator(),
+                    alignment: Alignment.center,
+                  );
+                }
+              },
+              future: Firestore.instance
+                  .collection("products")
+                  .document(cartProduct.category)
+                  .collection("items")
+                  .document(cartProduct.pid)
+                  .get(),
+            )
+          : _buildContent(),
     );
   }
-  Widget _buildContent(){
 
+  Widget _buildContent() {
+    return Row(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(8.0),
+          width: 120.0,
+          child: Image.network(
+            cartProduct.productData.images[0],
+            fit: BoxFit.cover,
+          ),
+        ),
+        Expanded(child: null)
+      ],
+    );
   }
 }
