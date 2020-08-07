@@ -1,3 +1,4 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lojavirtual/data/cart_product.dart';
@@ -10,6 +11,55 @@ class CartTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Widget _buildContent() {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(8.0),
+            width: 120.0,
+            child: Image.network(
+              cartProduct.productData.images[0],
+              fit: BoxFit.cover,
+            ),
+          ),
+          Expanded(
+              child: Container(
+                padding: EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      cartProduct.productData.title,
+                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17.0),
+                    ),
+                    Text(
+                      "Tamanho: ${cartProduct.size}",
+                      style: TextStyle(fontWeight: FontWeight.w300),
+                    ),Text(
+                      "R\$ ${cartProduct.productData.price.toStringAsFixed(2)}",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0,color: Theme.of(context).primaryColor),
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        IconButton(icon: Icon(Icons.remove), onPressed: cartProduct.quantity > 1? (){} : null, color: Theme.of(context).primaryColor,),
+                        Text(cartProduct.quantity.toString()),
+                        IconButton(icon: Icon(Icons.add), onPressed: (){},color: Theme.of(context).primaryColor),
+                        FlatButton(onPressed: (){}, child: Text("Remover"),textColor: Colors.grey[500],)
+                      ],
+
+                    )
+                  ],
+                ),
+              ))
+        ],
+      );
+    }
+
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: cartProduct.productData == null
@@ -36,21 +86,7 @@ class CartTile extends StatelessWidget {
             )
           : _buildContent(),
     );
+
   }
 
-  Widget _buildContent() {
-    return Row(
-      children: <Widget>[
-        Container(
-          padding: EdgeInsets.all(8.0),
-          width: 120.0,
-          child: Image.network(
-            cartProduct.productData.images[0],
-            fit: BoxFit.cover,
-          ),
-        ),
-        Expanded(child: null)
-      ],
-    );
-  }
 }
