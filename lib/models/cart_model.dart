@@ -15,6 +15,10 @@ class CartModel extends Model {
 
   bool isLoading = false;
 
+  String couponCode;
+  int discountPercent = 0;
+
+
   List<CartProduct> products = [];
 
   static CartModel of(BuildContext context) =>
@@ -59,6 +63,11 @@ class CartModel extends Model {
     notifyListeners();
   }
 
+
+  void setCoupon(String couponCode, int discountPercentage){
+    this.couponCode = couponCode;
+    this.discountPercent = discountPercentage;
+  }
 
   void _loadCartItems() async {
     QuerySnapshot query = await Firestore.instance.collection("user").document(
